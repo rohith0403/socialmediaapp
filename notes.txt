@@ -1,0 +1,15 @@
+1. Run 
+        python manage.py migrate 
+    
+    to implement your migrations. 
+    This is done before you start/setup your DB and stuff. 
+
+2. You can only use createsuperuser command after you run
+    migrations.
+
+        python manage.py createsuperuser
+    creates a new admin user
+3. You need to run migations any time you want to update the database
+    python manage.py makemigrations 
+
+    This updates the DB with any changes that you have created
