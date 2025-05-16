@@ -13,3 +13,9 @@
     python manage.py makemigrations 
 
     This updates the DB with any changes that you have created
+
+4. To create a new app inside your app, use:
+        python manage.py startapp users
+    
+    Then follow these steps:
+        a. Open project settings.py file and inside the INSTALLED_APPS add your new app

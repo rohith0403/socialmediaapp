@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        <!-- Will not work if csrf token is not added to a form html  -->
+        {% csrf_token %}
+        <fieldset class="form-class">
+            <legend class='border-bottom mb-4'>
+                Log In
+            </legend>
+            <!-- as_p renders the form in para blocks -->
+            <!-- {{ form.as_p  }} -->
+
+            {{form|crispy}}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">
+                Login
+            </button>
+        </div>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Create an account? <a href="{% url 'register' %}" class='ml-2'> Sign Up</a>
+        </small>
+    </div>
+</div>
+{% endblock content %}
